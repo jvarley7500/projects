@@ -1,4 +1,4 @@
-import picamera, time 
+import picamera, time, json
 
 def getPicture(name): #takes a photo and gives it a name
     try:
@@ -53,14 +53,21 @@ def getCharProfile(): #sets up a character profile
     while glasses == "":
         glasses = input("Are you wearing glasses?")
 
-    return [name,hairColour,hatWear,eyeColour,gender,glasses]
+    profileList = [name,hairColour,hatWear,eyeColour,gender,glasses]
+    return profileList
 
 def saveCharProfile(): #saves the character profile
-    profile = getCharProfile()
-    with open("profiles.txt",mode = "a", encoding = "utf-8") as my_file:
-        for item in profile:
-            my_file.write(item+",")
-        
-        my_file.write("\n")
-              
-saveCharProfile()
+    profile = profileList
+    with open("profiles.txt",mode = "a") as my_file:
+        json.dump(profileList,my_file)
+
+def loadProfile():
+    try:
+        with open("profiles.txt",mode = "rb") as my_file:
+            json.dump(profileList,my_file)
+
+    except FileIO:
+        print("No profiles found")
+        profile = []
+
+
