@@ -1,15 +1,15 @@
-import mcpi.minecraft as minecraft, time, random #imports minecraft and time
+import mcpi.minecraft as minecraft, time, random #imports minecraft, time, and random
 mc  = minecraft.Minecraft.create() #connects to the open minecraft game
 
-pos = mc.player.getPos()
-x1 = int(pos.x)
-y1 = int(pos.y)
-z1 = int(pos.z)
-x = random.randint(x1-0,x1+15)
-y = random.randint(y1-0,y1+5)
-z = random.randint(z1-10,z1+0)
+pos = mc.player.getPos()#gets players position
+x1 = int(pos.x)#makes x1 equal to position x of the player but as a whole number
+y1 = int(pos.y)#makes y1 equal to position y of the player but as a whole number
+z1 = int(pos.z)#makes z1 equal to position z of a player but as a whole number
+x = random.randint(x1-0,x1+15)#sets x to a random coordinate between 0 and 15
+y = random.randint(y1-0,y1+5)#sets y to a random coordinate between 0 and 5
+z = random.randint(z1-10,z1+0)#sets z to a random coordinate between 0 and 10
 def invader():
-    while True:
+    while True:#loops the indented code below
         x1 = int(pos.x)
         y1 = int(pos.y)
         z1 = int(pos.z)
@@ -31,12 +31,12 @@ def invader():
                 mc.setBlock(x+9,y+8,z,d,c)
                 mc.setBlock(x+4,y+7,z,d,c)
                 mc.setBlock(x+3,y+8,z,d,c)
-                mc.setBlock(x+4,y+5,z,d,15)
+                mc.setBlock(x+4,y+5,z,d,15)#sets the colour to 15
                 mc.setBlock(x+8,y+5,z,d,15)
                 if d == 35:
                     time.sleep(0.35) #waits 0.3 seconds
                 else:
-                    time.sleep(0.1)    
+                    time.sleep(0.1)  #waits 0.1 seconds  
 
 
-invader()
+invader()#makes the invader function go
