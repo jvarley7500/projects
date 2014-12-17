@@ -53,21 +53,30 @@ def getCharProfile(): #sets up a character profile
     while glasses == "":
         glasses = input("Are you wearing glasses?")
 
+    global profileList
     profileList = [name,hairColour,hatWear,eyeColour,gender,glasses]
     return profileList
 
-def saveCharProfile(): #saves the character profile
-    profile = profileList
-    with open("profiles.txt",mode = "a") as my_file:
-        json.dump(profileList,my_file)
+def saveCharProfile(profiles): #saves the character profile
+    profile = getCharProfile()
+    profiles.append(profile)
+    with open("profiles.txt",mode = "w") as my_file:
+        json.dump(profiles,my_file)
+    return profiles
 
 def loadProfile():
     try:
-        with open("profiles.txt",mode = "rb") as my_file:
-            json.dump(profileList,my_file)
+        with open("profiles.txt",mode = "r") as my_file:
+            profiles = json.load(my_file)
+            print(profiles)
 
-    except FileIO:
-        print("No profiles found")
-        profile = []
+    except IOError:
+        print("Error")
+        profiles = []
+    return profiles
 
+
+profiles = loadProfile()
+while len(profiles)<24:
+    profiles = saveCharProfile(profiles)
 
