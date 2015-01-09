@@ -29,10 +29,10 @@ def getCharProfile(): #sets up a character profile
     while name == "":
         name = input("What is your name?")
         if input("Is this  your name: " +name) == "y": #asks if the name is correct and if it isn't will ask for their name again
-            getPicture(name)
+            filename = getPicture(name)
         else:
             name = ""
-            
+    #        
     hairColour = ""
     while hairColour == "":
         hairColour = input("What is your hair colour?")
@@ -45,6 +45,10 @@ def getCharProfile(): #sets up a character profile
     while eyeColour == "":
         eyeColour = input("What colour are your eyes?")
 
+    facialHair = ""
+    while facialHair == "":
+        facialHair = input("Do you have any facial hair?")
+
     gender = ""
     while gender == "":
         gender = input("Are you male or female?")
@@ -54,7 +58,7 @@ def getCharProfile(): #sets up a character profile
         glasses = input("Are you wearing glasses?")
 
     global profileList
-    profileList = [name,hairColour,hatWear,eyeColour,gender,glasses]
+    profileList = [name,hairColour,hatWear,eyeColour,facialHair,gender,glasses,filename]
     return profileList
 
 def saveCharProfile(profiles): #saves the character profile

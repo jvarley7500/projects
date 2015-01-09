@@ -1,1 +1,1 @@
-["y", "y", "y", "y", "y", "y", ["bethany", "blonde", "no", "blue", "female", "no"]]
+[["George", "blonde", "n", "blue", "male", "n", "George.jpeg"], ["George", "blonde", "n", "blue", "y", "male", "n", "George.jpeg"], ["Alfred", "blonde", "n", "blue", "y", "male", "n", "Alfred.jpeg"], ["Alfred", "brown", "y", "blue", "n", "male", "n", "Alfred.jpeg"], ["Jamie", "red", "y", "brown", "y", "male", "n", "Jamie.jpeg"], ["Shanaynay", "red", "n", "blue", "n", "female", "n", "Shanaynay.jpeg"], ["Sally", "red", "y", "blue", "n", "female", "n", "Sally.jpeg"]]
